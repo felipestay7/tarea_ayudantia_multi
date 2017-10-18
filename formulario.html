@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 ">
+			<h3>Registro</h3>
+			<form action="procesar.php" method="GET">
+				Id_Registro: <input type="text" name="Id_Registro">
+				<br>
+				Nombre: <input type="text" name="Nombre">
+				<br>
+				Email: <input type="text" name="Email">
+				<br>
+				Direccion: <input type="text" name="Direccion">
+				<br>
+				<input type="hidden" name="Registro_Formulario">
+				<input type="submit" value="Enviar" class="btn btn-success">
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<button class="btn btn-success btn-lg" onclick="procesarDatoRegistro()">Consulta Registro</button>
+		</div>
+	</div>
+</div>
+
+	
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+
+	<script>
+		function procesarDatoRegistro() {
+			$.ajax({
+				method: "POST",
+				url: "ajax.php",
+				data: {  }
+			})
+				.done(function( msg ) {
+			  		alert( "Mi nombre es: " + msg );
+				});
+		}
+	</script>
+</body>
+</html>
